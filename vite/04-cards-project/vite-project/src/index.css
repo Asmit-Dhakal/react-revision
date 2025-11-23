@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'helvetica neue';
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+.parent {
+  min-height: 100vh;
+  background-color: rgb(180, 55, 55);
+  display: flex;
+  flex-wrap: wrap; /* allow cards to wrap to new rows */
+  gap: 20px; /* spacing between cards */
+  justify-content: center;
+  align-items: flex-start; /* align items to top so rows don't vertically center */
+  padding: 30px;
+}
+.card {
+  /* card container */
+  width: 100%;
+  max-width: 420px;
+  /* allow flex container to control layout -- cards will grow/shrink
+     and wrap into columns depending on available width */
+  flex: 1 1 320px; /* flex-grow, flex-shrink, flex-basis */
+  min-width: 240px;
+  margin: 0; /* spacing is handled by parent gap */
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #eee;
+  padding: 18px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(19,24,34,0.08);
+  color: #111;
+}
+
+.card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.top img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+  padding: 2px;
+  background: #fff;
+}
+
+.top button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  background-color: #fafafa;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.center{
+  /* main content */
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.center h3 {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+.center h3 span {
+  color: #999;
+  font-weight: 400;
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.center h2 {
+  font-size: 20px;
+  color: #111;
+  margin-top: 2px;
+}
+
+.center .meta {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap; /* allow tags to wrap instead of overflowing */
+}
+
+.center .meta h4 {
+  background: #f3f4f6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 600;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+  gap: 12px;
+}
+
+.bottom .price {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom .price h3 {
+  font-size: 18px;
+  color: #0b6;
+  margin: 0;
+}
+
+.bottom .price p {
+  font-size: 13px;
+  color: #777;
+  margin: 2px 0 0 0;
+}
+
+.bottom button {
+  background-color: #2b6ef6;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* small screens */
+@media (max-width: 420px) {
+  .card {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+  }
+  .top img {
+    height: 36px;
+    width: 36px;
+  }
+  .center h2 { font-size: 18px; }
+}
